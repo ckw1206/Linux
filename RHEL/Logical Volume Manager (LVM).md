@@ -1,15 +1,17 @@
-### Install LVM on RHEL
+### Linux Logical Volume Manager (LVM)
+
+Install LVM on RHEL
 ```
 sudo yum install lvm2
 ```
 
-### Create partitions
-Check current disk details by `fidsk`.
+Create partitions
+Check current disk infomation by using `fidsk`
 ```
 fdisk -l
 ```
 
-Create partition on disk using cfdisk utility.
+Create partition on disk by using `cfdisk`
 ```
 cfdisk /dev/sdb
 ```
