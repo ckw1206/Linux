@@ -6,7 +6,7 @@
   nano /etc/selinux/config
   ```
   
-  - Packages
+  - Install required packages
   ```
   yum install -y \
   libibverbs \
