@@ -1,12 +1,13 @@
-### Installation prerequisites
-  - Disable SELinux
-  
+# Installation prerequisites
+  ### Disable SELinux
   Change SELINUX=enforcing to SELINUX=disabled
   ```
   nano /etc/selinux/config
   ```
   
-  - Install required packages
+  </br>
+  
+  ### Install required packages
   ```
   yum install -y \
   libibverbs \
@@ -48,14 +49,14 @@
 
 </br>
   
-### Install IBM Db2
+# Install IBM Db2
 
-pre-install check
+### Pre-check for installation
 ```
 ./db2prereqcheck
 ```
 
-install Db2 
+### Install Db2 
 ```
 ./db2_install
 ```
