@@ -1,8 +1,9 @@
 ### Installation prerequisites
   - Disable SELinux
+  
+  Change SELINUX=enforcing to SELINUX=disabled
   ```
   nano /etc/selinux/config
-  change SELINUX=enforcing to SELINUX=disabled
   ```
   
   - Packages
