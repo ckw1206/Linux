@@ -1,8 +1,8 @@
-### Download packages and their dependencies from Red Hat customer portal at below link :
+### Download packages and dependencies from below link :
 
 [Red Hat Customer Portal](https://access.redhat.com/downloads/content/69/ver=/rhel---6/6.10/x86_64/packages)
 
-### Below is the list of packages and their dependencies :
+### Below is the list of packages and dependencies :
 
 ```
 python-argparse
