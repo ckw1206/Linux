@@ -5,6 +5,18 @@
 ### Below is the list of packages and their dependencies :
 
 ```
+python-argparse
+yum
+
+rpm
+rpm-build
+rpmdevtools
+
+openscap
+openscap-utils
+openscap-engine-sce
+openscap-scanner
+
 preupgrade-assistant                              
 preupgrade-assistant-el6toel7                        
 preupgrade-assistant-el6toel7-data                 
@@ -12,10 +24,6 @@ redhat-upgrade-tool
 
 fakeroot                                            
 fakeroot-libs                                         
-openscap
-openscap-engine-sce
-openscap-scanner
-openscap-utils
 pykickstart
 redhat-rpm-config
 rpm-build
@@ -26,5 +34,5 @@ Create a folder /tmp/packages on offline system, copy all the rpms to /tmp/packa
 ```
 # mkdir /tmp/packages
 # cd /tmp/packages
-# yum localinstall *
+# yum localinstall -y *
 ```
