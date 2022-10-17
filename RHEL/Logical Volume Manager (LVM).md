@@ -9,7 +9,7 @@ sudo yum install lvm2
 Create partitions
 Check current disk infomation by using `fidsk`
 ```
-gdisk -l
+fdisk -l
 ```
 </br>
 
