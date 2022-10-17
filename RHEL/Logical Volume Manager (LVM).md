@@ -53,7 +53,7 @@ lvcreate -L <size-mb> -n <volume_name> <vg_name>
 
 Create a filesystem on logical volumes
 ```
-mkfs.ext4 -m 0 <logical_volume_path>
+mkfs.ext4 -m 0 /dev/vg_name/lv_name
 ```
 </br>
 
