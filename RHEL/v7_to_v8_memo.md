@@ -1,3 +1,19 @@
+### Enalbe local repos
+```
+createrepo -v /var/www/html/<repo-id>
+yum clean all
+```
+#### Create a new file in /etc/yum.repos.d/<*file*.repo>
+```
+[local_repo]
+name=RHEL7.9-extra-repo
+metadata_expire=-1
+gpgcheck=0
+
+enabled=1
+baseurl=file:///media/rhel-7-server-extras-rpms
+```
+
 ### Instal local rpms
 ```
 yum --nogpgcheck localinstall packagename.rpm
