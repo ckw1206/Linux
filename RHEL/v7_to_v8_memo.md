@@ -11,7 +11,7 @@ metadata_expire=-1
 gpgcheck=0
 
 enabled=1
-baseurl=file:///media/rhel-7-server-extras-rpms
+baseurl=file:///local/repo/path
 ```
 
 ### Instal local rpms
