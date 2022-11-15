@@ -36,9 +36,9 @@ tar -xzf leapp-data18.tar.gz -C /etc/leapp/files && rm leapp-data18.tar.gz
 
 https://access.redhat.com/node/3664871/5121/0/23153919
 
-### Remove OpenSSH ciphers
+### Remove weak OpenSSH ciphers
 ```
-/etc/ssh/ssh_config
+vi /etc/ssh/sshd_config
 ```
 
 ### Replace pam_tally2 with pam_faillock
