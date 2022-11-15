@@ -44,6 +44,7 @@ https://access.redhat.com/node/3664871/5121/0/23153919
 ### Replace pam_tally2 with pam_faillock
 ```
 auth        required      pam_env.so
+auth        required      pam_tally2.so deny=4                                              # Delete this line
 auth        required      pam_faillock.so preauth silent audit deny=4 unlock_time=1200      # Insert this line
 auth        sufficient    pam_unix.so nullok try_first_pass
 auth        requisite     pam_succeed_if.so uid >= 1000 quiet_success
@@ -52,6 +53,7 @@ auth        required      pam_deny.so
 
 account     required      pam_faillock.so                                                   # Insert this line
 account     required      pam_unix.so
+account     required      pam_tally2.so                                                     # Delete this line
 account     sufficient    pam_localuser.so
 account     sufficient    pam_succeed_if.so uid < 1000 quiet
 account     required      pam_permit.so
