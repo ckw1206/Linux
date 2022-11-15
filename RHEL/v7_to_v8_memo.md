@@ -41,12 +41,32 @@ https://access.redhat.com/node/3664871/5121/0/23153919
 /etc/ssh/ssh_config
 ```
 
-### Remove pam module(s)
+### Replace pam_tally2 with pam_faillock
 ```
-rm -r /etc/pam.d/
+auth        required      pam_env.so
+auth        required      pam_faillock.so preauth silent audit deny=4 unlock_time=1200      # Insert this line
+auth        sufficient    pam_unix.so nullok try_first_pass
+auth        requisite     pam_succeed_if.so uid >= 1000 quiet_success
+auth        required      pam_faillock.so authfail audit deny=4 unlock_time=1200            # Insert this line
+auth        required      pam_deny.so
+
+account     required      pam_faillock.so                                                   # Insert this line
+account     required      pam_unix.so
+account     sufficient    pam_localuser.so
+account     sufficient    pam_succeed_if.so uid < 1000 quiet
+account     required      pam_permit.so
 ```
 
 ### Disable NFS
 ```
-service nfs stop
+#systemctl list-units | grep -i nfs
+
+nfs-idmapd.service                                 loaded active running   NFSv4 ID-name mapping service  
+nfs-mountd.service                                 loaded active running   NFS Mount Daemon
+nfs-server.service                                 loaded active exited    NFS server and services
+
+
+#systemctl stop nfs-idmapd.service
+#systemctl stop nfs-mountd.service
+#systemctl stop nfs-server.service
 ```
